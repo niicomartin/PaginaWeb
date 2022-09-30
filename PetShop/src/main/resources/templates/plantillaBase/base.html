@@ -1,0 +1,85 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
+  <title>Base</title>
+</head>
+
+<body>
+
+
+
+  <header th:fragment="head" class="p-3 bg-dark text-white">
+    <div class="container">
+
+
+
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="/" class="btn btn-dark">Inicio</a></li>
+          <button class="btn btn-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">Alimento</button>
+          <ul class="dropdown-menu p-3 bg-dark text-white">
+            <li><a href="/alimento">Adulto</a></li>
+            <ul class="list-unstyled">
+              <li><a href="/alimento?animal=ADULTO&tipo=SECO" class="btn btn-dark">Secos</a></li>
+              <li><a href="/alimento?animal=ADULTO&tipo=HUMEDOS" class="btn btn-dark">Humedos</a></li>
+              <li><a href="/alimento?animal=ADULTO&tipo=GOLOSINAS" class="btn btn-dark">Golosinas</a></li>
+
+            </ul>
+            <li><a href="/alimento">Cahorro</a> </li>
+            <ul class="list-unstyled">
+              <li><a href="/alimento?animal=CACHORRO&tipo=SECO" class="btn btn-dark">Secos</a></li>
+              <li><a href="/alimento?animal=CACHORRO&tipo=HUMEDOS" class="btn btn-dark">Humedos</a></li>
+              <li><a href="/alimento?animal=CACHORRO&tipo=GOLOSINAS" class="btn btn-dark">Golosinas</a></li>
+            </ul>
+            <ul class="list-unstyled">
+              <li><a href="/alimento" >Todos</a></li></ul>
+          </ul>
+
+
+          <li><a href="/accesorio" class="btn btn-dark">Accesorios</a></li>
+          <li><a href="/quienes_somos" class="btn btn-dark">Sobre nosotros</a></li>
+          <li><a href="/contacto" class="btn btn-dark">Contacto</a></li>
+          <li><a href="/CarritoCompra" class="btn btn-dark">Carrito</a></li>
+        
+         
+
+        </ul>
+         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="200" height="100" role="img" aria-label="Bootstrap">
+            <use xlink:href="#bootstrap"></use>
+          </svg>
+
+        <div class="text-end" th:if="${session.usuariosession == null}">
+          
+          
+            <button type="button" class="btn btn-outline-light me-2"><a href="/login" style="padding:1px; margin: 1px; align-self: 2px; alignment-baseline: 2px;">Ingresar</a></button>
+            <button type="button" class="btn btn-warning"><a href="/registro" style="padding:3px; margin: 3px;">Registrarse</a></button>
+<!--            <button type="button" class="btn btn-warning"><a href="/accesorio/crear" style="padding:1px; margin: 1px;">Ingresar accesorio</a></button>
+            <button type="button" class="btn btn-warning"><a href="/alimentoCrear" style="padding:1px; margin: 1px;">Ingresar alimento</a></button>-->
+
+
+        </div>
+<div class="text-end" th:if="${session.usuariosession != null}">
+    <button type="button" class="btn btn-warning"><a href="/logout" style="padding:3px; margin: 3px;">Cerrar Sesión</a></button>
+    <button type="button" class="btn btn-warning" style="border-radius:5px; "><a href="/login/usuario" style="padding:3px; margin: 3px;">Usuario</a></button>
+        </div>
+
+
+
+      </div>
+    </div>
+  </header>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
